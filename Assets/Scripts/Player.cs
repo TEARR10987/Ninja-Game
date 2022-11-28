@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
+            GetComponent<AudioSource>().Play();
             transform.Translate(3, 0, 0);
             //transform.position += new Vector3(3, 0, 0); 
         }
@@ -29,6 +30,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        GetComponent<AudioSource>().Play();
         gameManager.GetComponent<GameManager>().DecreaseHP();
     }
 
