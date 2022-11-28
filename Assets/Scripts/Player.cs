@@ -5,6 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public GameObject gameManager;
+    public AudioClip WalkSound;
+    public AudioClip HurtShound;
     
     // Start is called before the first frame update
     void Start()
@@ -17,6 +19,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
+            GetComponent<AudioSource>().clip=WalkSound;
             GetComponent<AudioSource>().Play();
             transform.Translate(3, 0, 0);
             //transform.position += new Vector3(3, 0, 0); 
@@ -24,12 +27,15 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            GetComponent<AudioSource>().clip = WalkSound;
+            GetComponent<AudioSource>().Play();
             transform.Translate(-3, 0, 0);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        GetComponent<AudioSource>().clip = HurtShound;
         GetComponent<AudioSource>().Play();
         gameManager.GetComponent<GameManager>().DecreaseHP();
     }
