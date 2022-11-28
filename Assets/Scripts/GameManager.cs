@@ -9,6 +9,12 @@ public class GameManager : MonoBehaviour
     float span = 1.0f;             //時間間隔
     float delta = 0;               //現在已經累積的時間
     public GameObject hpGauge;
+    public Text SconeText;
+    int Score = 0;
+    private void Start()
+    {
+        SconeText.text = "分數:" + Score.ToString();
+    }
 
     void Update()
     {
@@ -26,4 +32,10 @@ public class GameManager : MonoBehaviour
     {
         hpGauge.GetComponent<Image>().fillAmount -= 0.1f;
     }
+    public void IncreaseScore()
+    {
+        Score += 100;
+        SconeText.text = $"分數:{Score}";
+    }
 }
+
