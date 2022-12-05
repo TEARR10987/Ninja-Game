@@ -3,7 +3,11 @@ guid: 199852f265622764aa4fe7fcf3566325
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - ArrowPrefab: {fileID: 8773174226768940060, guid: 37f4f68b22dbc4648ba6d0babb9c7568, type: 3}
+  - CatfoodPrefab: {fileID: 4502923145616498247, guid: e2e27dfda33d70143bce5be59633b111, type: 3}
+  - hpGauge: {instanceID: 0}
+  - SconeText: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
