@@ -7,14 +7,13 @@ public class GameManager : MonoBehaviour
 {
     public GameObject ArrowPrefab;
     public GameObject CatfoodPrefab;
-    float span = 1.0f;             //®É¶¡¶¡¹j
-    float delta = 0;               //²{¦b¤w¸g²Ö¿nªº®É¶¡
+    float span = 1.0f;            
+    float delta = 0;            
     public GameObject hpGauge;
     public Text SconeText;
     int Score = 0;
     private void Start()
     {
-        SconeText.text = "¤À¼Æ:" + Score.ToString();
         InvokeRepeating("GenerateArrow", 0, 1);
         InvokeRepeating("GenerateCatfood", 5, 5);
     }
@@ -39,7 +38,7 @@ public class GameManager : MonoBehaviour
     public void IncreaseScore()
     {
         Score += 100;
-        SconeText.text = $"¤À¼Æ:{Score}";
+        SconeText.text = $"åˆ†æ•¸:{Score}";
     }
 }
 
